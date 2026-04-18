@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mindset2Excel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #FAF8F5;
+            color: #5C4A32;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #FAF8F5;
+            border-bottom: 1px solid #E8DDD0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1290px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img { height: 75px; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5C4A32;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #E8622A; }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(44,120,115,0.1) 0%, rgba(250,248,245,0.98) 100%);
+            padding: 60px 2rem;
+            text-align: center;
+            border-bottom: 3px solid #2C7873;
+        }
+
+        .page-hero h1 {
+            font-size: 44px;
+            color: #1B3A5C;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 19px;
+            color: #5C4A32;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* MAIN CONTENT */
+        .about-section {
+            padding: 70px 2rem;
+            background: #FAF8F5;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ANAND PROFILE ROW */
+        .profile-row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 60px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 50px;
+            border: 1px solid #E8DDD0;
+            border-top: 4px solid #2C7873;
+        }
+
+        .profile-photo img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2C7873;
+        }
+
+        .profile-content h2 {
+            font-size: 36px;
+            color: #1B3A5C;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .profile-content .title {
+            font-size: 16px;
+            color: #2C7873;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .profile-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #5C4A32;
+            margin-bottom: 18px;
+        }
+
+        .profile-content p strong {
+            color: #1B3A5C;
+        }
+
+        /* TWO COLUMN CARDS */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .content-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid #E8DDD0;
+        }
+
+        .content-card.teal-top { border-top: 4px solid #2C7873; }
+        .content-card.navy-top { border-top: 4px solid #1B3A5C; }
+        .content-card.orange-top { border-top: 4px solid #E8622A; }
+        .content-card.sage-top { border-top: 4px solid #5B8A6F; }
+
+        .content-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1B3A5C;
+        }
+
+        .content-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #5C4A32;
+            margin-bottom: 15px;
+        }
+
+        .content-card p:last-child { margin-bottom: 0; }
+
+        .content-card p strong { color: #1B3A5C; }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #1B3A5C 0%, #2C7873 100%);
+            border-radius: 12px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .final-cta a {
+            background: #E8622A;
+            color: #FFFFFF;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .final-cta a:hover {
+            background: #D4521A;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #2D2D2D;
+            padding: 40px 2rem;
+            text-align: center;
+            color: #999999;
+            margin-top: 0;
+        }
+
+        @media (max-width: 968px) {
+            .profile-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-photo {
+                display: flex;
+                justify-content: center;
+            }
+            .two-col { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://mindset2excel.com/wp-content/uploads/2024/10/mindsetlogotrans-300x90.png" alt="Mindset2Excel">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="m2e_about_v7.0.0.html">About</a></li>
+                    <li><a href="m2e_blog_v7.0.0.html">Blog</a></li>
+                    <li><a href="m2e_cadence_v7.2.0.html">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <h1>About Mindset2Excel</h1>
+        <p>Real-world experience. Structured thinking. No generic advice.</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <section class="about-section">
+        <div class="about-container">
+
+            <!-- ANAND PROFILE -->
+            <div class="profile-row">
+                <div class="profile-photo">
+                    <img src="https://mindset2excel.com/wp-content/uploads/2025/08/Anand.png" alt="Anand Nagarajan">
+                </div>
+                <div class="profile-content">
+                    <h2>Anand Nagarajan</h2>
+                    <p class="title">Founder & Lead Coach | ICF Certified Coach | Leadership & Transition Specialist | 2x Founder | Motivational Speaker</p>
+                    <p>I've lived through every stage I now coach — navigating insecurity, building confidence as a leader, and making the leap from a safe corporate path to entrepreneurship. Each step, with its failures and breakthroughs, taught me that real growth comes from honest reflection and tested mindset shifts.</p>
+                    <p><strong>All of this happened while building a family, raising kids, and making sure I still did the things that brought me joy and purpose along the way.</strong> Mindset2Excel was created from these lived experiences. If I can make these changes, I truly believe anyone can.</p>
+                    <p>The programs are built around the same reflection tools and questions that helped me reinvent my own life and career — while balancing the demands of work, family, and personal growth. This isn't theory. It's proven practice, grounded in real experience.</p>
+                </div>
+            </div>
+
+            <!-- TWO COLUMN CARDS -->
+            <div class="two-col">
+
+                <!-- OUR APPROACH -->
+                <div class="content-card teal-top">
+                    <h3>Our Approach</h3>
+                    <p>Mindset2Excel helps executives and driven professionals cut through the noise, get crystal-clear on their next chapter, and take aligned action with confidence.</p>
+                    <p>Every session is structured around your actual situation — not a generic framework. We work through what's really happening, challenge the assumptions holding you back, and help you make decisions you won't second-guess.</p>
+                </div>
+
+                <!-- WHAT MAKES THIS DIFFERENT -->
+                <div class="content-card navy-top">
+                    <h3>What Makes This Different</h3>
+                    <p><strong>Honest reflection.</strong> Our structured process creates space for genuine self-reflection so you can confront what really matters.</p>
+                    <p><strong>Proven in real life.</strong> Every tool is based on what actually works — not just theory.</p>
+                    <p><strong>Mindsets that last.</strong> Guided reflection helps you reframe beliefs, build confidence, and create real change.</p>
+                    <p><strong>Built for you.</strong> We don't give answers. We help you find them.</p>
+                </div>
+
+            </div>
+
+            <!-- FINAL CTA -->
+            <div class="final-cta">
+                <p>The clarity you're looking for starts with one conversation.</p>
+                <a href="m2e_cadence_v7.2.0.html">Start with one session</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright © 2026 - Mindset2Excel</p>
+        <p style="margin-top: 15px; font-size: 14px; color: #E8622A;">About Page v7.0.0 - Phase 1 Validation</p>
+    </footer>
+
+</body>
+</html>
